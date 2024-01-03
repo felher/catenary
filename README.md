@@ -6,5 +6,5 @@ You can find an interactive demo [here](https://catenary.sabix2.sabix.eu)
 
 Here is how it looks:
 
-![Diagram](images/diagram.png)
-![Tutorial](images/tutorial.png)
+![Diagram](public/images/diagram.png)
+![Tutorial](public/images/tutorial.png)
