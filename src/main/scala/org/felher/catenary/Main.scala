@@ -10,7 +10,12 @@ import org.scalajs.dom
 
   val info = pAPos.signal
     .combineWith(pBPos.signal, config.signal)
-    .map((pA, pB, config) => CatInfo.calculate(pA, pB, config.length))
+    .map((pA, pB, config) =>
+      println("starting calculation")
+      val ret = CatInfo.calculate(pA, pB, config.length)
+      println("finished calculation")
+      ret
+    )
 
   val bem = Bem("app")
   render(

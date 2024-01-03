@@ -8,7 +8,8 @@ final case class Config(
     length: Double,
     snap: Boolean,
     offset: Point,
-    shadowPoints: Boolean
+    shadowPoints: Boolean,
+    smallScreen: Boolean
 ) derives io.circe.Codec.AsObject
 
 object Config:
@@ -19,7 +20,8 @@ object Config:
     length = 50,
     snap = false,
     Point(0, 0),
-    shadowPoints = false
+    shadowPoints = false,
+    smallScreen = false
   )
 
   def render(config: Var[Config]): HtmlElement =

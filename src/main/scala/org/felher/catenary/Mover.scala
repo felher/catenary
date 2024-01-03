@@ -12,9 +12,11 @@ object Mover:
 
     def -->(f: Point => Unit): Modifier.Base =
       List(
+        running.signal --> (r => println(s"running: $r")),
         onPointerDown.mapTo(true) --> running,
         windowEvents(_.onPointerUp).mapTo(false) --> running,
         windowEvents(_.onPointerMove).filter(_ => running.now()) --> (e =>
+          println("move")
           val parentRect = container.getBoundingClientRect()
           val x          = e.clientX - parentRect.left
           val y          = e.clientY - parentRect.top

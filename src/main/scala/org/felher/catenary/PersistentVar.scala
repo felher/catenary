@@ -26,4 +26,4 @@ object PersistentVar:
     v
 
   private def storageKey(suffix: String): String =
-    "org.felher.aquabeads" + suffix
+    "org.felher.catenary" + suffix

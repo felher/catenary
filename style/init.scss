@@ -8,4 +8,5 @@
 html, body, #app-anchor {
   height: 100%;
   width: 100%;
+  overscroll-behavior: contain;
 }

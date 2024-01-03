@@ -1,5 +1,7 @@
 package org.felher.catenary
 
+import scala.util.chaining.*
+
 import com.raquo.laminar.api.L.*
 
 object Diagram:
@@ -48,14 +50,24 @@ object Diagram:
       svg.r("2")
     )
 
-    def setPoint(v: Var[Point], p: Point): Unit =
-      val newP = if config.now().snap then p.round else p
+    def onMove(v: Var[Point], p: Point): Unit =
+      def toAbsolute(p: Point): Point =
+        if config.now().smallScreen then p * 60 - Point(10, 10)
+        else p * 100 - Point(50, 50)
+
+      def round(p: Point): Point =
+        if config.now().snap then p.round
+        else p
+
+      val newP = p
+        .pipe(toAbsolute)
+        .pipe(round)
       v.set(newP)
 
     svg.svg(
       bem("diagram").svg,
       svg.className("diagram"),
-      svg.viewBox("-50 -50 100 100"),
+      svg.viewBox <-- config.map(c => if c.smallScreen then  "-10 -10 60 60" else "-50 -50 100 100"),
       // all the formulas are given in math coordinates, so it is easier to just flip the y axis
       svg.transform("scale(1, -1)"),
       renderGrid(),
@@ -64,8 +76,8 @@ object Diagram:
       renderHv(info).amend(bem("hv-main", Map("show" -> config.map(_.hv))).svg),
       inContext(ctx =>
         List(
-          pA.amend(Mover(ctx.ref) --> (p => setPoint(pAPos, p * 100 - Point(50, 50)))),
-          pB.amend(Mover(ctx.ref) --> (p => setPoint(pBPos, p * 100 - Point(50, 50))))
+          pA.amend(Mover(ctx.ref) --> (p => onMove(pAPos, p))),
+          pB.amend(Mover(ctx.ref) --> (p => onMove(pBPos, p)))
         )
       ),
       List(
