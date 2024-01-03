@@ -1,0 +1,22 @@
+.config {
+  background-color: #eee;
+
+  &__attribute {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__value {
+    flex-grow: 1;
+    margin-left: 0.5rem;
+  }
+}

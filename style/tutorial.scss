@@ -1,0 +1,28 @@
+.tutorial {
+  &__label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  &__control {
+    margin: 1rem;
+  }
+
+  &__text-block {
+    margin: 1rem 0;
+  }
+
+  &__calculation {
+    font-weight: bold;
+  }
+
+  &__clickable {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+    text-align: center;
+    user-select: none;
+  }
+
+}

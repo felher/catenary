@@ -1,0 +1,98 @@
+.diagram {
+  max-width: 100%;
+  max-height: 100%;
+  user-select: none;
+
+  text {
+    pointer-events: none;
+  }
+
+  &__moved-catenary {
+    fill: none;
+    stroke: black;
+    stroke-width: 0.3;
+  }
+
+  &__orig-catenary {
+    display: none;
+    fill: none;
+    stroke: lightgray;
+    stroke-width: 0.3;
+    &--show {
+      display: block;
+    }
+  }
+
+  &__pA {
+    fill: red;
+    &--relabel {
+      fill: blue;
+    }
+  }
+
+  &__pB {
+    fill: blue;
+    &--relabel {
+      fill: red;
+    }
+  }
+
+  &__p1p2-label {
+    fill: white;
+  }
+
+  &__p1-shadow {
+    fill: #bf4040;
+    &--hide {
+      display: none;
+    }
+  }
+
+  &__p2-shadow {
+    fill: #4646af;
+    &--hide {
+      display: none;
+    }
+  }
+
+  &__global-x-axis, &__global-y-axis {
+    stroke: black;
+    stroke-width: 0.2;
+  }
+
+  &__grid-line-x, &__grid-line-y {
+    stroke: lightgray;
+    stroke-width: 0.1;
+  }
+
+  &__grid-label-x, &__grid-label-y {
+    fill: black;
+  }
+
+  &__grid-tick {
+    stroke: black;
+    stroke-width: 0.1;
+
+    &--large {
+      stroke-width: 0.2;
+    }
+  }
+
+  &__hv-main {
+    display: none;
+    &--show {
+      display: block;
+    }
+  }
+
+  &__hv {
+    stroke: gray;
+    stroke-width: 0.3;
+    fill: none;
+
+    &--dashed {
+      stroke-dasharray: 0.2, 0.2;
+      pointer-events: none;
+    }
+  }
+}

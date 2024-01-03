@@ -1,0 +1,15 @@
+.labeled-slider {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+
+  &__label {
+    font-family: monospace;
+    justify-self: end;
+  }
+
+  &__input {
+    justify-self: start;
+    width: 20em;
+  }
+}

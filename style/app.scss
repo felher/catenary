@@ -1,0 +1,34 @@
+.app {
+  height: 100%;
+  padding: 1rem;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 0  minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+
+  @media (orientation: portrait) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 0  minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  &__config {
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  &__diagram {
+    justify-self: end;
+    align-self: center;
+
+    @media (orientation: portrait) {
+      justify-self: center;
+      align-self: end;
+    }
+  }
+
+  &__output {
+    max-height: 100%;
+    overflow: auto;
+  }
+}

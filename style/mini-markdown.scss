@@ -1,0 +1,10 @@
+.mini-markdown {
+  &__paragraph {
+    margin: 1em 0;
+  }
+
+  &__formula {
+    display: block;
+    margin: 0.5rem 0 0.5rem 2rem;
+  }
+}
