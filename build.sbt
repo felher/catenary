@@ -1,6 +1,6 @@
 import org.scalajs.linker.interface.ModuleSplitStyle
 
-val scala3Version = "3.3.1"
+val scala3Version = "3.3.3"
 
 lazy val root = project
   .in(file("."))
@@ -9,7 +9,7 @@ lazy val root = project
     name                            := "catenary",
     version                         := "0.1.0-SNAPSHOT",
     scalaVersion                    := scala3Version,
-        scalacOptions ++= Seq(
+    scalacOptions ++= Seq(
       "-language:strictEquality",
       "-source:future",
       "-feature",
