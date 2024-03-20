@@ -9,7 +9,7 @@ lazy val root = project
     name                            := "catenary",
     version                         := "0.1.0-SNAPSHOT",
     scalaVersion                    := scala3Version,
-        scalacOptions ++= Seq(
+    scalacOptions ++= Seq(
       "-language:strictEquality",
       "-source:future",
       "-feature",

@@ -32,8 +32,8 @@ object CatInfo:
     val a       = approximateCatenary(H, v, L)
     val x1      = a.flatMap(a => findXOfLeft(a, H, v))
     val x2      = x1.map(_ + H)
-    val y1 = x1.flatMap(x1 => a.map(a => a * Math.cosh(x1 / a)))
-    val y2 = x2.flatMap(x2 => a.map(a => a * Math.cosh(x2 / a)))
+    val y1      = x1.flatMap(x1 => a.map(a => a * Math.cosh(x1 / a)))
+    val y2      = x2.flatMap(x2 => a.map(a => a * Math.cosh(x2 / a)))
     val xOffset = x1.map(left.x - _)
     val yOffset = for
       a_  <- a
