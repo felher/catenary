@@ -67,7 +67,7 @@ object Diagram:
     svg.svg(
       bem("diagram").svg,
       svg.className("diagram"),
-      svg.viewBox <-- config.map(c => if c.smallScreen then  "-10 -10 60 60" else "-50 -50 100 100"),
+      svg.viewBox <-- config.map(c => if c.smallScreen then "-10 -10 60 60" else "-50 -50 100 100"),
       // all the formulas are given in math coordinates, so it is easier to just flip the y axis
       svg.transform("scale(1, -1)"),
       renderGrid(),
