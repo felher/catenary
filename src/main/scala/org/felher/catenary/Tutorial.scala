@@ -14,8 +14,10 @@ object Tutorial:
     div(
       bem,
       div(
-        LabeledCheckbox.forObject("I have a small screen", config, GenLens[Config](_.smallScreen)).amend(bem("control")),
-          bem ("step"),
+        LabeledCheckbox
+          .forObject("I have a small screen", config, GenLens[Config](_.smallScreen))
+          .amend(bem("control")),
+        bem("step"),
         div(
           bem("label"),
           "Problem Statement"
