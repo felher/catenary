@@ -29,9 +29,9 @@ lazy val root = project
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom"   % "2.4.0",
       "com.raquo"    %%% "laminar"       % "17.0.0",
-      "io.circe"     %%% "circe-core"    % "0.14.6",
-      "io.circe"     %%% "circe-generic" % "0.14.6",
-      "io.circe"     %%% "circe-parser"  % "0.14.6",
+      "io.circe"     %%% "circe-core"    % "0.14.10",
+      "io.circe"     %%% "circe-generic" % "0.14.10",
+      "io.circe"     %%% "circe-parser"  % "0.14.10",
       "dev.optics"   %%% "monocle-macro" % "3.1.0"
     )
   )
